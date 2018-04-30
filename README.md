@@ -1,4 +1,4 @@
-# React webpack config with eslint airbnb settings and csscomb
+# React-redux starter kit with eslint airbnb settings and csscomb
 
 ### Build command
 
