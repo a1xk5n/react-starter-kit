@@ -10,12 +10,10 @@ export default [
         path: '/authentication',
         component: userIsNotAuthenticated(Authentication),
         exact: true,
-        id: 1,
         routes: [
             {
                 path: '/authentication/login',
                 component: userIsNotAuthenticated(LoginPage),
-                id: 2,
             },
         ],
     },
@@ -23,6 +21,5 @@ export default [
         path: '/',
         component: MainPage,
         exact: true,
-        id: 3,
     },
 ];

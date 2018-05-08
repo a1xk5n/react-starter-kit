@@ -6,7 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 const Authentication = ({ routes }) => (
     <div>
         <Switch>
-            {routes.map(route => <Route key={route.id} {...route} />)}
+            {routes.map((route, i) => <Route key={i} {...route} />)}
             <Redirect from="/authentication" to="/authentication/login" />
         </Switch>
     </div>

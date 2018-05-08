@@ -12,9 +12,9 @@ export default () => (
     <Router history={history}>
         <div className="page-container">
             <Switch>
-                {ROUTES.map(route => (
+                {ROUTES.map((route, i) => (
                     <Route
-                        key={route.id}
+                        key={i}
                         path={route.path}
                         render={props => <route.component {...props} routes={route.routes} />}
                     />
