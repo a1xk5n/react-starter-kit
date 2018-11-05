@@ -8,13 +8,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: ['babel-polyfill', path.join(__dirname, 'src', 'js', 'index.jsx')],
+        index: ['@babel/polyfill', path.join(__dirname, 'src', 'js', 'index.jsx')],
     },
 
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].js',
-        publicPath: '/',
+        publicPath: '',
     },
 
     module: {
@@ -23,23 +23,7 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
 
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015', 'stage-2', 'react'],
-                        plugins: [
-                            'transform-decorators-legacy',
-                            'transform-class-properties',
-                            [
-                                'babel-plugin-transform-builtin-extend',
-                                {
-                                    globals: ['Error', 'Array'],
-                                },
-                            ],
-                        ],
-                        cacheDirectory: true,
-                    },
-                },
+                use: ['babel-loader'],
             },
         ],
     },
@@ -55,6 +39,8 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: 'src/index.html',
+            filename: 'index.html',
+            hash: true,
         }),
 
         new webpack.HotModuleReplacementPlugin(),

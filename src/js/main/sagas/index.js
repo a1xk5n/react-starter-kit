@@ -1,4 +1,6 @@
-import { fork, takeLatest, delay } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+
+import { fork, takeLatest } from 'redux-saga/effects';
 
 function* exampleSaga() {
     yield takeLatest('test', function* test() {

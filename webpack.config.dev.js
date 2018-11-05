@@ -5,6 +5,7 @@ const WebpackBaseConfig = require('./webpack.config');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+    mode: 'development',
     ...WebpackBaseConfig,
 
     module: {
